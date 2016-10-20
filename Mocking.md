@@ -77,3 +77,17 @@ PROVIDE BOTH BEHAVIOURS!
 
 * mock:seq/2
 * mock:par/2.
+
+# Implementing a Mocking library
+
+How should we catch a call to a mocked function, e.g. foo:bar/0?
+
+* process_flag(Flag :: error_handler, Module) is probably the simplest way.
+  * Doesn't work if the code is in the path
+  * Doesn't deal with multiple processes
+* Create a new module `foo` which recieves the function calls. It will have to replace any previously loaded module `foo` which might cause problems
+  * Deals with multiple processes
+  * How does code loading work?
+* Create a completely new error handler module which replaces the existing default error handler in the vm.
+  * Deals with multiple processes
+  * How does code loading work?
