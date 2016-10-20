@@ -2,6 +2,19 @@
 % Josef Svenningsson
 %
 
+# Meaning of a call
+
+What does it really mean when I write that I expect a call like this?
+
+~~~{.erlang}
+> meck:expect(foo,bar,fun ()  -> ok end).
+~~~
+
+Two common semantics:
+
+* Expect exactly one call to `foo:bar/0`.
+* Expect at least one calls to `foo:bar/0` but possibly many.
+
 # Existing Mocking Frameworks
 
 When I write like this what does it mean:
