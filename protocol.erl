@@ -1,9 +1,10 @@
 -module(protocol).
 -author(josef).
 
--include_lib("eunit/include/eunit.hrl").
+-include_lib("proper/include/proper.hrl").
 
 -export([send/1,rec/0]).
+-export([protocol_prop/0]).
 
 send(Msg) ->
     Parts = lists:split(Msg),
@@ -13,13 +14,14 @@ send(Msg) ->
 		 ,Parts).
 
 rec() ->
-    Msg = lower:rec()
+    Msg = lower:rec(),
     lists:concat(Msg).
 
 protocol_prop() ->
-    FORALL(Msg,gen_msg(),
+    ?FORALL(Msg,gen_msg(),
           begin
-	      put(mock,[]).
+	      put(mock,[]),
+	      meck:new(lower),
 	      meck:expect(lower,send,fun (L) ->
 					     Apa = get(mock),
 					     put(mock,[L|Apa])
@@ -29,6 +31,10 @@ protocol_prop() ->
 				     end),
 	      send(Msg),
               erase(mock),
+	      meck:unload(lower),
 	      Msg == rec() andalso
 		  meck:verify_expects()
 	  end).
+
+gen_msg() ->
+    string().
