@@ -7,7 +7,7 @@
 -export([protocol_prop/0]).
 
 send(Msg) ->
-    Parts = lists:split(Msg),
+    Parts = lists:split(trunc(length(Msg)/2),Msg),
     lists:foreach(fun (L) ->
 			  lower:send(L)
 		  end
