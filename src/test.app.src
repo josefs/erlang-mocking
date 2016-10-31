@@ -2,13 +2,13 @@
  [{description, "Testing different mocking frameworks in Erlang"},
   {vsn, "0.1.0"},
   {registered, []},
-  {mod, { test, []}, {protocol, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    meck
    ]},
   {env,[]},
-  {modules, []},
+  {modules, [test,protocol]},
 
   {maintainers, []},
   {licenses, []},

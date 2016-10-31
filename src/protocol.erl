@@ -2,6 +2,7 @@
 -author(josef).
 
 -include_lib("proper/include/proper.hrl").
+-include_lib("eunit/include/eunit.hrl").
 
 -export([send/1,rec/0]).
 -export([protocol_prop/0]).
@@ -16,6 +17,11 @@ send(Msg) ->
 rec() ->
     Msg = lower:rec(),
     lists:concat(Msg).
+
+protocol_test_() ->
+    fun () ->
+	    protocol_prop()
+    end.
 
 protocol_prop() ->
     ?FORALL(Msg,gen_msg(),
