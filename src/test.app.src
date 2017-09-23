@@ -1,0 +1,16 @@
+{application, test,
+ [{description, "Testing different mocking frameworks in Erlang"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications,
+   [kernel,
+    stdlib,
+    meck
+   ]},
+  {env,[]},
+  {modules, [test,protocol]},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.

@@ -2,6 +2,28 @@
 % Josef Svenningsson
 %
 
+# What is the role of a mocking library?
+
+Depending on how you answer this question you will get a very different mocking library.
+
+## Mocking is used to make functional tests work
+
+This view leads to a very loose design
+
+* Order of calls to stubs doesn't matter.
+* The number of calls to a stubbed function doesn't matter.
+* It may not matter whether a stubbed function gets called.
+
+## Mocking is an integral part in testing the input/output behavior of a function
+
+This is a much stronger view where it is important to specify exactly when and how stubs are called.
+
+* Order of calls matter.
+* The number of calls to a stubbed function matters and it is important that the arguments are correct in each call.
+* It is important that stubbed functions are called.
+
+A mocking libraray should enable specifying the call-out behavior of a function.
+
 # Meaning of a call
 
 What does it really mean when I write that I expect a call like this?
