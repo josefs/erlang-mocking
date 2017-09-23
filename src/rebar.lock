@@ -1,0 +1,14 @@
+{"1.1.0",
+[{<<"eunit_addons">>,{pkg,<<"eunit_addons">>,<<"0.3.0">>},1},
+ {<<"hoax">>,{pkg,<<"hoax">>,<<"0.11.2">>},0},
+ {<<"meck">>,{pkg,<<"meck">>,<<"0.8.4">>},0},
+ {<<"mockgyver">>,{pkg,<<"mockgyver">>,<<"0.12.0">>},0},
+ {<<"parse_trans">>,{pkg,<<"parse_trans">>,<<"3.0.0">>},1}]}.
+[
+{pkg_hash,[
+ {<<"eunit_addons">>, <<"AB6A240F34486AA1CD722A39DB22F21FB7FF77AE872E2EEDBBBCC68E4A0CA1D0">>},
+ {<<"hoax">>, <<"7CD8B08245B068794FD52634FBACA57970F9A768313BD6002AAA5A4F4E1D7EB8">>},
+ {<<"meck">>, <<"59CA1CD971372AA223138EFCF9B29475BDE299E1953046A0C727184790AB1520">>},
+ {<<"mockgyver">>, <<"650084477089CBC7A4587102F67D5F9E4D4BB4E4CE33A3ECA4A7906CD7B3F77E">>},
+ {<<"parse_trans">>, <<"9E96B1C9C3A0DF54E7B76F8F685D38BFA1EB21B31E042B1D1A5A70258E4DB1E3">>}]}
+].

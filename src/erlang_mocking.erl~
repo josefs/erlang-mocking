@@ -1,0 +1,7 @@
+-module(erlang_mocking).
+-author(JosefSvenningsson).
+
+-export([foo/0]).
+
+foo() ->
+    put(foo).

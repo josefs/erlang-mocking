@@ -1,0 +1,16 @@
+{application, erlang_mocking,
+ [{description, "Trying out various erlang mocking frameworks"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { erlang_mocking, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, {erlang_mocking,[]}},
+
+  {maintainers, []},
+  {licenses, []},
+  {links, []}
+ ]}.

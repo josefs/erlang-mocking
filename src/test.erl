@@ -1,5 +1,5 @@
 -module(test).
--author(Josef Svenningsson).
+-author(josef).
 
 -include_lib("eunit/include/eunit.hrl").
 
@@ -13,6 +13,6 @@ order_matters_meck() ->
     foo:baz(),
     
     % Checking the callouts
-    ?assertTrue(meck:validate(foo)),
+    ?assert(meck:validate(foo)),
     meck:unload(foo).
 				 
